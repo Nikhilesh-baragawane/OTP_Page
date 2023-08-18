@@ -162,7 +162,7 @@
       let finalInput = "";
 
       function f1() {
-     //   this.frm = document.getElementsByName("contact-form")[0];
+       this.frm = document.getElementsByName("contact-form")[0];
         const input = document.querySelectorAll(".input");
         const inputField = document.querySelector(".inputfield");
         const submitButton = document.getElementById("submit");
@@ -248,7 +248,7 @@
         var number = 60;
         var hidden = false;
 
-        var x = setInterval(() => {
+        this.x = setInterval(() => {
           if (number == -1) {
             clearTimeout(x);
             if (hidden) {
@@ -285,8 +285,9 @@
         //   element.value = "";
         // });
         alert(obj.otp);
-        //frm.reset();
-        window.location.reload()
+        frm.reset();
+        clearInterval(this.x)
+       // window.location.reload()
         // return false;
         // alert(finalInput);
       }
